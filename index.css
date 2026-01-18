@@ -1,5 +1,7 @@
 body{
-    background-color: #2a2a2f;
+    background-image: url(2.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #form{
     border: 2px solid rgba(81, 25, 134, 0.812);
@@ -13,7 +15,9 @@ body{
     line-height: auto;
     color: rgb(49, 12, 88);
     border-radius: 20px;
-    background: rgba(120, 120, 120, 0.9);
+    
+    background-color: rgba(131, 126, 135, 0.796) ;
+
 
     border: 2px solid rgba(137, 43, 226, 0.6);
 
@@ -76,4 +80,81 @@ input:focus {
     transition: box-shadow 0.12s ease;
 
     will-change: box-shadow;
+}
+.neon-submit {
+    margin-top: 15px;
+    padding: 5px 30px;
+
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    color: #f4e9ff;
+    background: rgba(96, 9, 178, 0.821);
+
+    border: 2px solid rgba(190, 100, 255, 0.9);
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(190, 100, 255, 0.6),
+        0 0 35px rgba(130, 50, 255, 0.45),
+        inset 0 0 10px rgba(255, 255, 255, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.neon-submit:hover {
+    background: rgba(96, 9, 178, 0.821);
+
+    box-shadow:
+        0 0 25px rgba(220, 140, 255, 0.9),
+        0 0 65px rgba(150, 80, 255, 0.7),
+        inset 0 0 14px rgba(255, 255, 255, 0.25);
+
+    transform: translateY(-2px);
+}
+
+.neon-submit:active {
+    transform: translateY(1px) scale(0.97);
+
+    box-shadow:
+        0 0 12px rgba(180, 80, 255, 0.8),
+        inset 0 0 18px rgba(0, 0, 0, 0.4);
+}
+
+
+/*notif handeling*/
+#notif {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    padding: 14px 22px;
+
+    font-weight: bold;
+    color: white;
+
+    border-radius: 14px;
+    opacity: 0;
+    transform: translateY(-10px);
+
+    transition: 0.3s ease;
+    pointer-events: none;
+}
+
+#notif.success {
+    background: rgba(120, 60, 200, 0.95);
+    box-shadow:
+        0 0 25px rgba(180, 120, 255, 0.9),
+        0 0 60px rgba(140, 80, 255, 0.6);
+}
+
+#notif.error {
+    background: rgba(160, 40, 60, 0.95);
+    box-shadow:
+        0 0 25px rgba(255, 80, 120, 0.9);
 }
