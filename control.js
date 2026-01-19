@@ -3,7 +3,7 @@ const form = document.querySelector("form");
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault(); // stops page reload
-    fetch("/api/register", {
+    fetch("/api/register.js", {
         method: "POST",
         body: new FormData(form)
     });

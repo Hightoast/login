@@ -1,7 +1,4 @@
 <?php
-
-
-header("Content-Type: application/json");
 $cnx = mysqli_connect("sql112.infinityfree.com", "if0_40934225","NMOHq6Mqy2eRJ5", "if0_40934225_login");
 if (!$cnx) {
     echo json_encode(["status" => "error", "msg" => "DB connection failed"]);
