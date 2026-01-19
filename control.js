@@ -8,7 +8,7 @@ form.addEventListener("submit", async (e) => {
             "https://hightoast-login.ct.ws/register.php",
             {
                 method: "POST",
-                body: formData
+                body: form
             }
         );
 
