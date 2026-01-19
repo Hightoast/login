@@ -65,23 +65,7 @@ form.addEventListener("submit", async (e) => {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         return showNotification("Invalid email format!", "error");
     }
-    
-    
-    const formData = new FormData(form);
-    const res = await fetch("register.php", {
-        method: "POST",
-        body: formData
-    });
 
-    const data = await res.json(); // parse JSON from PHP
-
-    // Handle response
-    if (data.status === "ok") {
-        form.reset(); // clears inputs
-        showNotification(data.msg, "success"); // neon popup
-    } else {
-        showNotification(data.msg, "error");
-    }
 });
 
 
