@@ -1,6 +1,11 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json");
-$cnx = mysqli_connect("localhost", "root", "", "login");
+
+header("Content-Type: application/json");
+$cnx = mysqli_connect("sql112.infinityfree.com", "if0_40934225","NMOHq6Mqy2eRJ5", "if0_40934225_login");
 if (!$cnx) {
     echo json_encode(["status" => "error", "msg" => "DB connection failed"]);
     exit;
@@ -35,7 +40,7 @@ mysqli_stmt_execute($stmt);
 mysqli_stmt_store_result($stmt);
 
 if (mysqli_stmt_num_rows($stmt) > 0) {
-    echo json_encode(["status" => "error", "msg" => "Account with this username and tel already exists"]);
+    echo json_encode(["status" => "error", "msg" => "Account with this email and tel already exists"]);
     exit;
 }
 mysqli_stmt_close($stmt);
