@@ -1,14 +1,5 @@
 <?php
-header("Access-Control-Allow-Origin: https://login-steel-one.vercel.app");
-header("Access-Control-Allow-Methods: POST, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type");
-header("Content-Type: application/json");
 
-// Handle preflight request
-if ($_SERVER["REQUEST_METHOD"] === "OPTIONS") {
-    http_response_code(200);
-    exit;
-}
 
 header("Content-Type: application/json");
 $cnx = mysqli_connect("sql112.infinityfree.com", "if0_40934225","NMOHq6Mqy2eRJ5", "if0_40934225_login");

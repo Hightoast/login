@@ -3,27 +3,11 @@ const form = document.querySelector("form");
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault(); // stops page reload
-    try {
-        const res = await fetch(
-            "https://hightoast-login.ct.ws/register.php",
-            {
-                method: "POST",
-                body: form
-            }
-        );
+    fetch("/api/register", {
+        method: "POST",
+        body: new FormData(form)
+    });
 
-        const data = await res.json();
-
-        if (data.status === "ok") {
-            form.reset();
-            showNotification(data.msg, "success");
-        } else {
-            showNotification(data.msg, "error");
-        }
-    } catch (err) {
-        showNotification("Server unreachable", "error");
-        console.error(err);
-    }
     
     const un = document.getElementById("un").value.trim();
     const tel = document.getElementById("tel").value.trim();
